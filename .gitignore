@@ -1,0 +1,19 @@
+# Local data includes inventory, observations and uploaded footage.
+data/
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Model weights and generated artifacts can be large and may have separate licenses.
+*.pt
+*.onnx
+*.engine
+runs/
+
+# Local environment files and editor state.
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/

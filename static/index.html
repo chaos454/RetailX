@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="RetailX is a local retail operations prototype for inventory, queue observations, and sampled video analysis.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="RetailX — Local Retail Intelligence">
+  <meta property="og:description" content="Inventory workflows, queue observations, and local video analysis in one operations workspace.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RetailX — Local Retail Intelligence">
+  <meta name="twitter:description" content="A local-first retail operations prototype.">
+  <meta name="twitter:image" content="/social-preview.png">
+  <title>RetailX — Smarter Stores. Real-Time Decisions.</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="brand-intro" id="brand-intro" role="status" aria-labelledby="brand-intro-title" hidden>
+    <div class="brand-intro-center" id="brand-intro-center">
+      <h1 class="brand-intro-word" id="brand-intro-title" aria-label="RetailX">
+        <span class="brand-intro-retail" id="brand-intro-retail" aria-hidden="true"><span class="brand-intro-letter">R</span><span class="brand-intro-letter">e</span><span class="brand-intro-letter">t</span><span class="brand-intro-letter">a</span><span class="brand-intro-letter">i</span><span class="brand-intro-letter">l</span></span><span class="brand-intro-x" id="brand-intro-x"><span class="brand-intro-trail" id="brand-intro-trail" aria-hidden="true"></span><span>X</span></span>
+      </h1>
+      <p class="brand-intro-caption">STORE INTELLIGENCE</p>
+    </div>
+  </div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="RetailX overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><b></b></span>
+        <span class="brand-name">Retail<span>X</span><small>STORE INTELLIGENCE</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
+        <button class="nav-item" data-page="shopper"><span class="nav-icon">⌁</span>Shopper analytics</button>
+        <button class="nav-item" data-page="queue"><span class="nav-icon">≋</span>Queue management</button>
+        <button class="nav-item" data-page="inventory"><span class="nav-icon">▤</span>Inventory</button>
+        <button class="nav-item" data-page="alerts"><span class="nav-icon">♢</span>Alerts<span class="nav-count" id="nav-alert-count" hidden>0</span></button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">▧</span>Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="local-status"><span class="status-dot"></span><span><strong>Local workspace</strong><small>Data stays on this device</small></span></div>
+        <button class="nav-item" data-page="settings"><span class="nav-icon">⚙</span>Settings</button>
+        <div class="sidebar-foot">RETAILX <span>·</span> LOCAL DEMO</div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>RetailX</span><span class="crumb-slash">/</span><strong id="current-section">Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="live-indicator"><span class="pulse"></span><span id="header-status">Local data</span></div>
+          <button class="icon-button" id="theme-toggle" title="Switch theme" aria-label="Switch theme"><span id="theme-icon">☼</span></button>
+          <div class="avatar" title="Local workspace">R</div>
+        </div>
+      </header>
+      <main id="page-content" tabindex="-1" aria-live="polite"></main>
+      <footer class="page-footer"><span>RETAILX <span class="footer-mark">×</span></span><nav class="footer-links" aria-label="Legal and privacy"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><button type="button" data-action="privacy-preferences">Privacy notice</button></nav><span id="footer-updated">Local prototype</span></footer>
+    </div>
+  </div>
+
+  <dialog id="product-dialog" class="modal">
+    <form id="product-form" method="dialog">
+      <div class="modal-head"><div><div class="eyebrow">INVENTORY</div><h2 id="product-modal-title">Add product</h2></div><button class="icon-button close-modal" type="button" aria-label="Close">×</button></div>
+      <input type="hidden" name="id">
+      <div class="form-grid">
+        <label>Product name<input name="name" required maxlength="160" placeholder="e.g. Oat milk, 1L"></label>
+        <label>SKU<input name="sku" required maxlength="40" pattern="[A-Za-z0-9][A-Za-z0-9._-]{0,39}" title="Use letters, numbers, dot, underscore, or hyphen." placeholder="e.g. DRK-004"></label>
+        <label>Category<input name="category" maxlength="160" placeholder="Beverages"></label>
+        <label>Unit<input name="unit" maxlength="160" value="units"></label>
+        <label>Quantity<input name="quantity" type="number" min="0" max="2000000000" step="1" required value="0"></label>
+        <label>Reorder threshold<input name="reorder_threshold" type="number" min="0" max="2000000000" step="1" required value="5"></label>
+        <label class="span-2">Unit price (₹)<input name="price" type="number" min="0" max="1000000000" step="0.01" required value="0"></label>
+      </div>
+      <p class="form-error" id="product-form-error" role="alert" tabindex="-1" hidden></p>
+      <div class="modal-actions"><button type="button" class="button button-quiet close-modal">Cancel</button><button class="button button-primary" type="submit">Save product</button></div>
+    </form>
+  </dialog>
+  <dialog id="adjust-dialog" class="modal small-modal">
+    <form id="adjust-form" method="dialog">
+      <div class="modal-head"><div><div class="eyebrow">STOCK MOVEMENT</div><h2>Adjust stock</h2><p class="muted" id="adjust-product-name"></p></div><button class="icon-button close-modal" type="button" aria-label="Close">×</button></div>
+      <input type="hidden" name="id">
+      <label>Change in quantity<input name="delta" type="number" min="-2000000000" max="2000000000" step="1" required placeholder="e.g. 12 or -3"></label>
+      <label>Reason<input name="reason" maxlength="160" required value="Manual stock count"></label>
+      <p class="form-error" id="adjust-form-error" role="alert" tabindex="-1" hidden></p>
+      <div class="modal-actions"><button type="button" class="button button-quiet close-modal">Cancel</button><button class="button button-primary" type="submit">Apply adjustment</button></div>
+    </form>
+  </dialog>
+  <aside class="privacy-notice" id="privacy-notice" aria-label="Privacy notice" hidden>
+    <div><strong>No tracking cookies or optional analytics</strong><p>This local prototype saves operational records in SQLite on this device. The only browser storage is the preference to remember that this notice was dismissed.</p></div>
+    <div class="privacy-actions"><button class="button button-small" type="button" data-action="privacy-preferences">Privacy choices</button><a class="button button-small" href="/privacy.html">Privacy details</a><button id="privacy-dismiss" class="button button-primary button-small" type="button">Dismiss notice</button></div>
+  </aside>
+  <dialog id="privacy-dialog" class="modal small-modal" aria-labelledby="privacy-dialog-title">
+    <div class="modal-head"><div><div class="eyebrow">PRIVACY</div><h2 id="privacy-dialog-title">Your privacy choices</h2></div><button class="icon-button" type="button" data-action="close-privacy" aria-label="Close privacy choices">×</button></div>
+    <p class="privacy-dialog-copy">RetailX does not currently use analytics, advertising, marketing cookies, or other optional tracking. There is no optional category to enable or reject. A browser preference only remembers whether you dismissed this notice.</p>
+    <p class="privacy-dialog-copy">Inventory, settings, alerts, and video records are stored in the local RetailX data folder. Read the <a class="inline-link" href="/privacy.html">Privacy Policy</a> for details.</p>
+    <div class="modal-actions"><button class="button button-quiet" type="button" data-action="close-privacy">Close</button><button class="button button-primary" type="button" data-action="dismiss-privacy">Dismiss this notice</button></div>
+  </dialog>
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Draft terms for the local RetailX retail operations prototype, its inventory records, and AI-assisted estimates.">
+  <meta property="og:title" content="RetailX Terms and Conditions">
+  <meta property="og:description" content="Draft use terms and limitations for the local RetailX prototype.">
+  <meta property="og:type" content="article">
+  <!--PUBLIC_SEO-->
+  <title>Terms and Conditions — RetailX</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="legal-body">
+  <header class="legal-topbar"><a class="brand" href="/" aria-label="RetailX home"><span class="brand-mark" aria-hidden="true"><i></i><b></b></span><span class="brand-name">Retail<span>X</span><small>STORE INTELLIGENCE</small></span></a><button class="icon-button" id="legal-theme" type="button" aria-label="Switch theme" title="Switch theme">☼</button></header>
+  <main class="legal-main">
+    <div class="eyebrow">RETAILX · LOCAL PROTOTYPE</div>
+    <h1>Terms and Conditions</h1>
+    <p class="legal-lede">Draft terms for evaluation of the local RetailX prototype. The project owner must complete the operator and jurisdiction details and obtain appropriate legal review before commercial or public use.</p>
+    <p class="legal-updated">Last updated: October 22, 2026</p>
+
+    <section><h2>1. Operator details and acceptance</h2><p>Operator/legal entity: <strong>not supplied — project owner to complete.</strong> Governing jurisdiction and dispute process: <strong>not supplied — project owner to complete after legal review.</strong> These draft terms do not create an account, subscription, or commercial service agreement. Do not treat this prototype page as a final contract.</p></section>
+    <section><h2>2. Intended use and responsibilities</h2><p>RetailX is an experimental local tool for recording store inventory, stock movements, alert conditions, queue-region observations, and reports. Use it only on a computer and with data and video you are authorized to process. Keep the server on loopback, protect the local data folder, review imported CSV data, and keep backups before changing or removing stored records. No authentication, multi-user permissions, or shared-store isolation is implemented.</p></section>
+    <section><h2>3. Estimates and accuracy</h2><p>Object-detection results depend on camera placement, image quality, lighting, occlusion, encoding, model behavior, and sampling interval. A sampled frame is one observation; the same person may be counted repeatedly. Queue counts are detections with a bounding-box center inside the configured region. RetailX does not identify people, infer demographics or dwell time, calculate reliable waiting time, or guarantee stock levels. Verify estimates before using them for staffing, safety, purchasing, or customer decisions.</p></section>
+    <section><h2>4. Availability and technical limits</h2><p>The application is provided as a local prototype and may contain defects, stop unexpectedly, or require compatible packages, model weights, codecs, storage, and compute resources. Video processing is limited by the configured upload, duration, image-dimension, concurrency, and output-size safeguards. The retention control is currently a preference and does not delete data automatically. Backups and recovery are the operator’s responsibility.</p></section>
+    <section><h2>5. Data and privacy</h2><p>Inventory, operational records, and video data are stored locally under the configured RetailX data folder. The current application does not use account credentials, analytics trackers, or remote video inference. See the <a class="inline-link" href="/privacy.html">Privacy Policy</a> for storage, exports, deletion controls, and limitations. The operator is responsible for notices, permissions, retention decisions, and lawful use of camera footage.</p></section>
+    <section><h2>6. Intellectual property and third-party software</h2><p>RetailX branding and project ownership have not been identified in the supplied workspace; the project owner must specify the rights holder and permitted use. Third-party packages and pretrained model weights remain subject to their own licenses and terms. Review those terms before redistribution or commercial use. No ownership of third-party materials is claimed here.</p></section>
+    <section><h2>7. Warranty and liability draft</h2><p>RetailX is experimental software and is provided for evaluation without a promise that it will meet a particular operational need or be uninterrupted. Do not rely on its estimates as the sole basis for consequential decisions. Any warranty exclusions, liability limits, consumer rights, and remedies must be drafted for the actual jurisdiction and reviewed by qualified counsel; this page does not attempt to waive rights that cannot legally be waived.</p></section>
+    <section><h2>8. Reporting issues and changes</h2><p>Issue-reporting route and operator contact: <strong>not supplied — the project owner must add a verified contact method before deployment.</strong> The owner should publish revised terms when the application’s capabilities, hosting, data handling, or operator details change.</p><p class="legal-draft">Draft for owner completion and appropriate legal review. No legal approval, certification, or compliance status is asserted.</p></section>
+  </main>
+  <footer class="legal-footer"><a href="/">Return to RetailX</a><a href="/privacy.html">Privacy Policy</a></footer>
+  <script src="/legal.js" defer></script>
+</body>
+</html>

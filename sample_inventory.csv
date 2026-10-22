@@ -1,0 +1,9 @@
+sku,name,category,quantity,unit,price,reorder_threshold
+DRK-004,Oat milk 1L,Beverages,4,cartons,3.49,8
+DRK-011,Cold brew 250ml,Beverages,22,bottles,4.25,6
+PAN-027,Wholegrain crackers,Pantry,0,packs,2.19,5
+PAN-031,Tomato passata 500g,Pantry,16,jars,2.89,5
+PRD-008,Avocados,Produce,7,each,1.25,10
+PRD-014,Seedless grapes,Produce,23,kg,5.49,8
+HOU-002,Reusable tote,Household,48,each,4.00,12
+SNK-019,Dark chocolate 70%,Snacks,11,bars,2.75,6

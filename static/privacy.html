@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="How the local RetailX prototype stores inventory, settings, alerts, and video observations on this device.">
+  <meta property="og:title" content="RetailX Privacy Policy">
+  <meta property="og:description" content="Data storage and privacy information for the local RetailX prototype.">
+  <meta property="og:type" content="article">
+  <!--PUBLIC_SEO-->
+  <title>Privacy Policy — RetailX</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="legal-body">
+  <header class="legal-topbar"><a class="brand" href="/" aria-label="RetailX home"><span class="brand-mark" aria-hidden="true"><i></i><b></b></span><span class="brand-name">Retail<span>X</span><small>STORE INTELLIGENCE</small></span></a><button class="icon-button" id="legal-theme" type="button" aria-label="Switch theme" title="Switch theme">☼</button></header>
+  <main class="legal-main">
+    <div class="eyebrow">RETAILX · LOCAL PROTOTYPE</div>
+    <h1>Privacy Policy</h1>
+    <p class="legal-lede">This draft describes the current local RetailX application. It must be reviewed and completed by the project owner before any public or commercial deployment.</p>
+    <p class="legal-updated">Last updated: October 22, 2026</p>
+
+    <section><h2>1. Operator and scope</h2><p>RetailX is a single-user local prototype. No company, store operator, privacy contact, or legal entity has been supplied in this project. The project owner must identify the operator and provide a privacy contact before sharing a deployed instance. This page is informational and is not a statement of legal compliance.</p></section>
+    <section><h2>2. Information stored</h2><ul>
+      <li><strong>Inventory:</strong> product names, SKUs, categories, quantities, units, prices, reorder thresholds, sample-data markers, and timestamps supplied by the operator.</li>
+      <li><strong>Operational records:</strong> stock movement reasons and quantities, alert descriptions and status history, and application settings such as theme, queue region, sampling interval, and retention preference.</li>
+      <li><strong>Video processing:</strong> uploaded source video files, their supplied filename, job status and timestamps, sampled frame counts, queue-region counts, and locally generated annotated videos.</li>
+      <li><strong>Browser preference:</strong> local storage may hold a single dismissal preference for the privacy notice. The app does not use that value to identify or track a person.</li>
+    </ul></section>
+    <section><h2>3. Purpose and processing</h2><p>RetailX stores inventory and movement records to show stock levels and threshold alerts; it stores settings to configure the local interface and video sampling; and it processes videos to count person detections in sampled frames and in a configured queue region. These counts can repeat the same person across frames and are not unique visitor counts, identities, demographics, dwell time, or wait-time predictions.</p><p>Video decoding and object detection run on the computer hosting RetailX when the optional OpenCV and Ultralytics packages are installed. The application code sends the video file to no remote inference endpoint. On first use, the model library may download model weights from its configured upstream source; Python package installation also contacts the configured package index.</p></section>
+    <section><h2>4. Cookies, analytics, and third parties</h2><p>The current application does not set HTTP cookies and does not include product analytics, advertising, marketing pixels, or external tracking scripts. Essential application records are stored in a local SQLite database, not browser cookies. The browser storage preference described above only remembers whether this notice was dismissed. No optional tracking category is configured.</p><p>The operator may choose to install dependencies and model weights from third-party package and model sources. Those services may receive ordinary network request metadata when contacted. RetailX does not intentionally transmit inventory records or source footage to those services.</p></section>
+    <section><h2>5. Location, retention, and protection</h2><p>The default database, uploaded videos, and annotated output videos are kept in the local <code>data</code> folder beside the application. The database contains operational data and paths; the video folders contain the uploaded and generated media. Access depends on the operating-system account and folder permissions. The application does not encrypt these files itself, and backups inherit the protection of their destination.</p><p>Records are kept until the operator removes them. Products can be deleted in Inventory; job deletion removes a completed or stopped job, its source/output videos, and its frame observations. CSV export is available for inventory, movements, alerts, and observations. Deleting a product intentionally leaves its stock-movement history. The retention setting currently records a preference only; automatic cleanup is not implemented. The operator should stop RetailX and maintain protected backups before changing or removing the local data folder.</p></section>
+    <section><h2>6. Access and privacy requests</h2><p>This prototype has no accounts or role-based access control. Anyone who can reach its local server can read or change its records, so it must not be exposed to a shared network or the public Internet. There is no in-app privacy request form. The project owner must supply an operator name, contact method, and the process for access, correction, export, and deletion requests before deployment.</p></section>
+    <section><h2>7. Camera and user responsibilities</h2><p>The store operator is responsible for deciding whether camera use is appropriate, providing notices, obtaining any required permissions, limiting footage to an appropriate purpose, and following applicable law and workplace/store policies. Do not upload footage unless you have the right to process it. Avoid including audio or unrelated sensitive material.</p></section>
+    <section><h2>8. Changes and contact</h2><p>This page must be updated when storage, processing, analytics, hosting, or retention behavior changes. Privacy contact: <strong>not supplied — the project owner must provide this before deployment.</strong></p><p class="legal-draft">Draft for owner completion and appropriate legal review. No address, legal identity, certification, or compliance status is asserted.</p></section>
+  </main>
+  <footer class="legal-footer"><a href="/">Return to RetailX</a><a href="/terms.html">Terms and Conditions</a></footer>
+  <script src="/legal.js" defer></script>
+</body>
+</html>
